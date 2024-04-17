@@ -1,0 +1,66 @@
+version: '3.8'
+x-airflow-common:
+  &airflow-common
+  image: apache/airflow:2.8.0
+  environment:
+    - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://ajied:postgres@postgres:5432/airflow
+    - AIRFLOW__CORE__FERNET_KEY=FB0o_zt4e3Ziq3LdUUO7F2Z95cvFFx16hU8jTeR1ASM=
+    - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    - AIRFLOW__CORE__LOGGING_LEVEL=INFO
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./airflow-data/logs:/opt/airflow/logs
+    - ./airflow-data/plugins:/opt/airflow/plugins
+    - ./airflow-data/airflow.cfg:/opt/airlfow/airflow.cfg
+  depends_on:
+    - postgres
+  networks:
+    - airflow
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=ajied
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=airflow
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+    volumes:
+      - "final_project_zoomcamp_2024:/var/lib/postgresql/data:rw"
+    ports:
+      - "5432:5432"
+    networks:
+    - airflow
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=ajied@zoomcamp.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "8080:80"
+    networks:
+      - airflow
+
+  webserver:
+    << : *airflow-common
+    command: airflow webserver
+    ports:
+      - 8085:8080
+    depends_on:
+      - scheduler
+    container_name: airflow_webserver
+
+  scheduler:
+    << : *airflow-common
+    command: bash -c "airflow db migrate && airflow users create --username ajid --firstname Ajid --lastname Dhoifullah --role Admin --email ajiedsageda48@gmail.com --password airflow && airflow scheduler"
+    container_name: airflow_scheduler
+
+networks:
+  airflow:
+    name: "final_project"
+  
+volumes:
+  final_project_zoomcamp_2024:

@@ -1,0 +1,7 @@
+pandas 
+polars 
+psycopg2-binary 
+python-dateutil
+pyarrow 
+pytz 
+SQLAlchemy 
