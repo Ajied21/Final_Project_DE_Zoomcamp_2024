@@ -22,6 +22,18 @@ This project about to Indonesia is an archipelago nation located in Southeast As
 - Terraform for used provision and manage resources, such as virtual machines or cloud instances, networking, storage, and other components in your cloud environment
 - Google Cloud Platform (GCP) is a cloud computing service product owned by Google. in the cloud it can minimize complexity and offer solutions for your storage, analytics, big data, machine learning and application development needs
 
+# Technologies
+
+- Cloud: Google Cloud Platform (GCP)
+= Infrastructure as code (IaC): Terraform
+- Workflow orchestration: Airflow
+- RDBMS: PostgreSQL
+- Data Lake: Google Cloud Storage
+- Data Warehouse: BigQuery
+- Batch processing: Spark
+- Programming: Python and SQL
+- Visualization: Looker Studio 
+
 # Workflow
 
 ![Architecture Overview](./Images/Pipeline.png)
@@ -40,6 +52,10 @@ docker run --network=final_project final_project_zoomcamp_2024 --user=ajied --pa
 
 # Data_Visualization
 
-![Architecture Overview](./Images/Pipeline.png)
+![Architecture Overview](./Images/analytics.png)
+
+URL dashboard : https://lookerstudio.google.com/s/gD29cCWjO8w 
 
 # Data Resources:
+
+URL : https://www.kaggle.com/datasets/dannytheodore/socio-economic-of-indonesia-in-2021?select=2021socio_economic_indonesia.csv
