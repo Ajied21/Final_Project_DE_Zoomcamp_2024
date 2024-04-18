@@ -26,3 +26,20 @@ This project about to Indonesia is an archipelago nation located in Southeast As
 
 ![Architecture Overview](./Images/Pipeline.png)
 
+# Execution
+
+1. Create docker compose in the docker-compose.yaml file and enter the applicable image procedure then run it with the docker compose build up -d command.
+2. Extract the data in Kaggle with Python and open the data then clean the data with Spark. Example code is at Spark.ipynb
+3. Create an access URL on Gihub after cleaning in Spark
+4. Create python scripts for ingestions and dockerfiles to automate data transfer to RDBMS Postgresql in the Docker container. Example files are in Data_Ingestions.py and dockerfile along with requirements for the modules used. then executed or run in the terminal with the command:
+docker run --network=final_project final_project_zoomcamp_2024 --user=ajied --password=admin --database=airflow --host=postgres --file=socio_economic_of_indonesia.parquet --table_name=socio_economic_of_indonesia --url=https://github. com/Ajied21/Final_Project_DE_Zoomcamp_2024/raw/304a573e40edf3bff6020a8797c3915363861637/data/socio_economic_of_indonesia.parquet
+5. Check the data in pgadmin4 via the URL: http://localhost:8080. After successfully entering the PostgresQL RDBMS, then create a DAG for the batching process with Airflow and send it to Data Lake GCS or Google Cloud Storage. for the data file, it's in ./dags/DAG.py and run it at http://localhost:8085
+6. Before sending it to GCP, first create a bucket and database, here I use Terraform to automate several services that are needed, such as: Google Cloud Storage and BigQuery. For example, the files are in the Terraform folder
+6. Next, pull the data in Google Cloud Storage by taking the URI link in the bucket and entering the data warehouse or BigQuery then enter a SQL query to retrieve the data. for example sql queries in the Bigquery-sql folder.
+7. Finally, after performing the SQL query then enter Looker Studio to carry out EDA or Exploratory Data Analysis.
+
+# Data_Visualization
+
+![Architecture Overview](./Images/Pipeline.png)
+
+# Data Resources:
