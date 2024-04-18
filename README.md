@@ -26,6 +26,7 @@ This project about to Indonesia is an archipelago nation located in Southeast As
 
 - Cloud: Google Cloud Platform (GCP)
 - Infrastructure as code (IaC): Terraform
+- Container: Docker
 - Workflow orchestration: Airflow
 - RDBMS: PostgreSQL
 - Data Lake: Google Cloud Storage
