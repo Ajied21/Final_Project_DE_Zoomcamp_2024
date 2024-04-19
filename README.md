@@ -51,6 +51,34 @@ docker run --network=final_project final_project_zoomcamp_2024 --user=ajied --pa
 6. Next, pull the data in Google Cloud Storage by taking the URI link in the bucket and entering the data warehouse or BigQuery then enter a SQL query to retrieve the data. for example sql queries in the Bigquery-sql folder.
 7. Finally, after performing the SQL query then enter Looker Studio to carry out EDA or Exploratory Data Analysis.
 
+# Images_On_premise
+
+![Architecture Overview](./Images/Database.png)
+
+Postgresql
+
+![Architecture Overview](./Images/Airflow.png)
+
+Apache Airflow
+
+# Images_Cloud(GCP)
+
+![Architecture Overview](./Images/Gcs.png)
+
+Google Cloud Storage(GCS)/Data Lake
+
+![Architecture Overview](./Images/ETL_GCP.png)
+
+Batch Processing for Transform data on cloud dataprep
+
+![Architecture Overview](./Images/run_job.png)
+
+Batch Processing for Load data to Bigquery on cloud dataprep
+
+![Architecture Overview](./Images/bigquery.png)
+
+Bigquery/Data Warehouse
+
 # Data_Visualization
 
 ![Architecture Overview](./Images/analytics.png)
