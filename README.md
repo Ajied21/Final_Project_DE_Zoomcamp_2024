@@ -53,31 +53,25 @@ docker run --network=final_project final_project_zoomcamp_2024 --user=ajied --pa
 
 # Images_On_premise
 
+Postgresql
 ![Architecture Overview](./Images/Database.png)
 
-Postgresql
-
-![Architecture Overview](./Images/Airflow.png)
-
 Apache Airflow
+![Architecture Overview](./Images/Airflow.png)
 
 # Images_Cloud(GCP)
 
+Google Cloud Storage(GCS)/Data Lake
 ![Architecture Overview](./Images/Gcs.png)
 
-Google Cloud Storage(GCS)/Data Lake
-
+Batch Processing for Transform data on cloud dataprep
 ![Architecture Overview](./Images/ETL_GCP.png)
 
-Batch Processing for Transform data on cloud dataprep
-
+Batch Processing for Load data to Bigquery on cloud dataprep
 ![Architecture Overview](./Images/run_job.png)
 
-Batch Processing for Load data to Bigquery on cloud dataprep
-
-![Architecture Overview](./Images/bigquery.png)
-
 Bigquery/Data Warehouse
+![Architecture Overview](./Images/bigquery.png)
 
 # Data_Visualization
 
