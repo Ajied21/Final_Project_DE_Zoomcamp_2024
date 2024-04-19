@@ -1,0 +1,32 @@
+{
+  "BigQuery Schema": [
+      {
+          "name": "Provinces",
+          "type": "STRING"
+      },
+      {
+          "name": "Cities_Regencies",
+          "type": "STRING"
+      },
+      {
+          "name": "Percentage_of_Poor_People",
+          "type": "FLOAT"
+      },
+      {
+          "name": "Regional_GDP",
+          "type": "FLOAT"
+      },
+      {
+          "name": "Life_Expectancy",
+          "type": "FLOAT"
+      },
+      {
+          "name": "Average_School_Time",
+          "type": "FLOAT"
+      },
+      {
+          "name": "Expenses_per_Capita",
+          "type": "INTEGER"
+      }
+  ]
+}
